@@ -70,4 +70,40 @@ class BalanceController extends BaseController
         $user = $this->usersModel->find($user_id);
         return json_encode($user);
     }
+
+    public function transferBalance(int $sender_id = 0, int $recipient_id = 0, float $amount = 0)
+    {
+        $errors = [];
+
+        $sender = $this->usersModel->find($sender_id);
+        $recipient = $this->usersModel->find($recipient_id);
+
+        if (!isset($sender)) {
+            $errors[] = "Sender user does not exist.";
+            return json_encode($errors);
+        } elseif (!isset($recipient)) {
+            $errors[] = "Recipient user does not exist.";
+            return json_encode($errors);
+        }
+
+        if ($amount <= 0) {
+            $errors[] = "Invalid amount.";
+            return json_encode($errors);
+        }
+
+        if ($amount > $sender->getBalance()) {
+            $errors[] = "Insufficient funds.";
+            return json_encode($errors);
+        }
+
+        $senderUpdatedBalance = $sender->getBalance() - $amount;
+        $recipientUpdatedBalance = $recipient->getBalance() + $amount;
+        $sender->setBalance($senderUpdatedBalance);
+        $this->usersModel->save($sender);
+        $recipient->setBalance($recipientUpdatedBalance);
+        $this->usersModel->save($recipient);
+
+        $users = $this->usersModel->find([$sender_id, $recipient_id]);
+        return json_encode($users);
+    }
 }
