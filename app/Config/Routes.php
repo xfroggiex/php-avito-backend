@@ -32,6 +32,7 @@ $routes->setAutoRoute(false);
 $routes->get('/balance/(:num)', 'BalanceController::getBalance/$1');
 $routes->put('/balance/(:num)/increase/(:segment)', 'BalanceController::increaseBalance/$1/$2');
 $routes->put('/balance/(:num)/decrease/(:segment)', 'BalanceController::decreaseBalance/$1/$2');
+$routes->put('/balance/(:num)/transfer/(:num)/(:segment)', 'BalanceController::transferBalance/$1/$2/$3');
 
 /*
  * --------------------------------------------------------------------
