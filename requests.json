@@ -1,0 +1,553 @@
+{
+	"info": {
+		"_postman_id": "a279110c-1789-40ab-a5ce-878215413536",
+		"name": "AVITO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26598830"
+	},
+	"item": [
+		{
+			"name": "getBalance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://theredarmy.ru/balance/999",
+					"protocol": "http",
+					"host": [
+						"theredarmy",
+						"ru"
+					],
+					"path": [
+						"balance",
+						"999"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Successful",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://theredarmy.ru/balance/1",
+							"protocol": "http",
+							"host": [
+								"theredarmy",
+								"ru"
+							],
+							"path": [
+								"balance",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx-reuseport/1.21.1"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Mar 2023 12:18:55 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=30"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.2"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, max-age=0, no-cache"
+						}
+					],
+					"cookie": [],
+					"body": "{\"id\":\"1\",\"user_id\":\"1\",\"balance\":\"50\"}"
+				},
+				{
+					"name": "DoesNotExistError",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://theredarmy.ru/balance/999",
+							"protocol": "http",
+							"host": [
+								"theredarmy",
+								"ru"
+							],
+							"path": [
+								"balance",
+								"999"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx-reuseport/1.21.1"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Mar 2023 12:13:56 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "24"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=30"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.2"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, max-age=0, no-cache"
+						}
+					],
+					"cookie": [],
+					"body": "[\"User does not exist.\"]"
+				}
+			]
+		},
+		{
+			"name": "increaseBalance",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://theredarmy.ru/balance/1/increase/50",
+					"protocol": "http",
+					"host": [
+						"theredarmy",
+						"ru"
+					],
+					"path": [
+						"balance",
+						"1",
+						"increase",
+						"50"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Successful",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://theredarmy.ru/balance/1/increase/50",
+							"protocol": "http",
+							"host": [
+								"theredarmy",
+								"ru"
+							],
+							"path": [
+								"balance",
+								"1",
+								"increase",
+								"50"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx-reuseport/1.21.1"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Mar 2023 12:18:34 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=30"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.2"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, max-age=0, no-cache"
+						}
+					],
+					"cookie": [],
+					"body": "{\"id\":\"1\",\"user_id\":\"1\",\"balance\":\"50\"}"
+				},
+				{
+					"name": "InvalidAmountError",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://theredarmy.ru/balance/1/increase/0",
+							"protocol": "http",
+							"host": [
+								"theredarmy",
+								"ru"
+							],
+							"path": [
+								"balance",
+								"1",
+								"increase",
+								"0"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx-reuseport/1.21.1"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Mar 2023 12:20:33 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "19"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=30"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.2"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, max-age=0, no-cache"
+						}
+					],
+					"cookie": [],
+					"body": "[\"Invalid amount.\"]"
+				},
+				{
+					"name": "InvalidAmountError2",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://theredarmy.ru/balance/1/increase/-10",
+							"protocol": "http",
+							"host": [
+								"theredarmy",
+								"ru"
+							],
+							"path": [
+								"balance",
+								"1",
+								"increase",
+								"-10"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx-reuseport/1.21.1"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Mar 2023 12:20:59 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "19"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=30"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.2"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, max-age=0, no-cache"
+						}
+					],
+					"cookie": [],
+					"body": "[\"Invalid amount.\"]"
+				}
+			]
+		},
+		{
+			"name": "decreaseBalance",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://theredarmy.ru/balance/1/decrease/25",
+					"protocol": "http",
+					"host": [
+						"theredarmy",
+						"ru"
+					],
+					"path": [
+						"balance",
+						"1",
+						"decrease",
+						"25"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Successful",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://theredarmy.ru/balance/1/decrease/25",
+							"protocol": "http",
+							"host": [
+								"theredarmy",
+								"ru"
+							],
+							"path": [
+								"balance",
+								"1",
+								"decrease",
+								"25"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx-reuseport/1.21.1"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Mar 2023 12:21:58 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=30"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.2"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, max-age=0, no-cache"
+						}
+					],
+					"cookie": [],
+					"body": "{\"id\":\"1\",\"user_id\":\"1\",\"balance\":\"25\"}"
+				},
+				{
+					"name": "InsufficientFundsError",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://theredarmy.ru/balance/1/decrease/100",
+							"protocol": "http",
+							"host": [
+								"theredarmy",
+								"ru"
+							],
+							"path": [
+								"balance",
+								"1",
+								"decrease",
+								"100"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx-reuseport/1.21.1"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Mar 2023 12:22:29 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=30"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.2"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, max-age=0, no-cache"
+						}
+					],
+					"cookie": [],
+					"body": "[\"Insufficient funds.\"]"
+				},
+				{
+					"name": "InvalidAmountError",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://theredarmy.ru/balance/1/decrease/-10",
+							"protocol": "http",
+							"host": [
+								"theredarmy",
+								"ru"
+							],
+							"path": [
+								"balance",
+								"1",
+								"decrease",
+								"-10"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx-reuseport/1.21.1"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Mar 2023 12:22:52 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "19"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=30"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.2"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, max-age=0, no-cache"
+						}
+					],
+					"cookie": [],
+					"body": "[\"Invalid amount.\"]"
+				}
+			]
+		}
+	]
+}
