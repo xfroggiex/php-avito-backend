@@ -29,6 +29,9 @@ $routes->setAutoRoute(false);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+$routes->get('/balance/(:num)', 'BalanceController::getBalance/$1');
+$routes->put('/balance/(:num)/increase/(:segment)', 'BalanceController::increaseBalance/$1/$2');
+$routes->put('/balance/(:num)/decrease/(:segment)', 'BalanceController::decreaseBalance/$1/$2');
 
 /*
  * --------------------------------------------------------------------
