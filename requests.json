@@ -548,6 +548,396 @@
 					"body": "[\"Invalid amount.\"]"
 				}
 			]
+		},
+		{
+			"name": "transferBalance",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://theredarmy.ru/balance/1/transfer/2/50",
+					"protocol": "http",
+					"host": [
+						"theredarmy",
+						"ru"
+					],
+					"path": [
+						"balance",
+						"1",
+						"transfer",
+						"2",
+						"50"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Successful",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://theredarmy.ru/balance/1/transfer/2/50",
+							"protocol": "http",
+							"host": [
+								"theredarmy",
+								"ru"
+							],
+							"path": [
+								"balance",
+								"1",
+								"transfer",
+								"2",
+								"50"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx-reuseport/1.21.1"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Mar 2023 13:03:47 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "85"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=30"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.2"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, max-age=0, no-cache"
+						}
+					],
+					"cookie": [],
+					"body": "[{\"id\":\"4\",\"user_id\":\"1\",\"balance\":\"450\"},{\"id\":\"5\",\"user_id\":\"2\",\"balance\":\"12050\"}]"
+				},
+				{
+					"name": "Successful2",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://theredarmy.ru/balance/2/transfer/1/50",
+							"protocol": "http",
+							"host": [
+								"theredarmy",
+								"ru"
+							],
+							"path": [
+								"balance",
+								"2",
+								"transfer",
+								"1",
+								"50"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx-reuseport/1.21.1"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Mar 2023 13:04:05 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "85"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=30"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.2"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, max-age=0, no-cache"
+						}
+					],
+					"cookie": [],
+					"body": "[{\"id\":\"4\",\"user_id\":\"1\",\"balance\":\"500\"},{\"id\":\"5\",\"user_id\":\"2\",\"balance\":\"12000\"}]"
+				},
+				{
+					"name": "SenderUserDoesNotExistError",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://theredarmy.ru/balance/0/transfer/2/50",
+							"protocol": "http",
+							"host": [
+								"theredarmy",
+								"ru"
+							],
+							"path": [
+								"balance",
+								"0",
+								"transfer",
+								"2",
+								"50"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx-reuseport/1.21.1"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Mar 2023 13:04:35 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=30"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.2"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, max-age=0, no-cache"
+						}
+					],
+					"cookie": [],
+					"body": "[\"Sender user does not exist.\"]"
+				},
+				{
+					"name": "RecipientUserDoesNotExistError",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://theredarmy.ru/balance/2/transfer/0/50",
+							"protocol": "http",
+							"host": [
+								"theredarmy",
+								"ru"
+							],
+							"path": [
+								"balance",
+								"2",
+								"transfer",
+								"0",
+								"50"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx-reuseport/1.21.1"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Mar 2023 13:05:09 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=30"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.2"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, max-age=0, no-cache"
+						}
+					],
+					"cookie": [],
+					"body": "[\"Recipient user does not exist.\"]"
+				},
+				{
+					"name": "InsufficientFundsError",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://theredarmy.ru/balance/1/transfer/2/5000",
+							"protocol": "http",
+							"host": [
+								"theredarmy",
+								"ru"
+							],
+							"path": [
+								"balance",
+								"1",
+								"transfer",
+								"2",
+								"5000"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx-reuseport/1.21.1"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Mar 2023 13:05:35 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=30"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.2"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, max-age=0, no-cache"
+						}
+					],
+					"cookie": [],
+					"body": "[\"Insufficient funds.\"]"
+				},
+				{
+					"name": "InvalidAmountError",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://theredarmy.ru/balance/1/transfer/2/-500",
+							"protocol": "http",
+							"host": [
+								"theredarmy",
+								"ru"
+							],
+							"path": [
+								"balance",
+								"1",
+								"transfer",
+								"2",
+								"-500"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx-reuseport/1.21.1"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Mar 2023 13:05:55 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "19"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=30"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.2"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, max-age=0, no-cache"
+						}
+					],
+					"cookie": [],
+					"body": "[\"Invalid amount.\"]"
+				}
+			]
 		}
 	]
 }
