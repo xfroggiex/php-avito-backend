@@ -101,9 +101,9 @@
 							]
 						}
 					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "html",
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
 					"header": [
 						{
 							"key": "Server",
@@ -111,15 +111,15 @@
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 30 Mar 2023 12:13:56 GMT"
+							"value": "Fri, 31 Mar 2023 10:16:29 GMT"
 						},
 						{
 							"key": "Content-Type",
-							"value": "text/html; charset=UTF-8"
+							"value": "application/json; charset=UTF-8"
 						},
 						{
 							"key": "Content-Length",
-							"value": "24"
+							"value": "39"
 						},
 						{
 							"key": "Connection",
@@ -136,10 +136,18 @@
 						{
 							"key": "Cache-Control",
 							"value": "no-store, max-age=0, no-cache"
+						},
+						{
+							"key": "Debugbar-Time",
+							"value": "1680257789.313965"
+						},
+						{
+							"key": "Debugbar-Link",
+							"value": "http://theredarmy.ru/?debugbar_time=1680257789.313965"
 						}
 					],
 					"cookie": [],
-					"body": "[\"User does not exist.\"]"
+					"body": "{\n    \"error\": \"User does not exist.\"\n}"
 				}
 			]
 		},
@@ -244,9 +252,9 @@
 							]
 						}
 					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "html",
+					"status": "Unprocessable Content",
+					"code": 422,
+					"_postman_previewlanguage": "json",
 					"header": [
 						{
 							"key": "Server",
@@ -254,15 +262,15 @@
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 30 Mar 2023 12:20:33 GMT"
+							"value": "Fri, 31 Mar 2023 10:38:48 GMT"
 						},
 						{
 							"key": "Content-Type",
-							"value": "text/html; charset=UTF-8"
+							"value": "application/json; charset=UTF-8"
 						},
 						{
 							"key": "Content-Length",
-							"value": "19"
+							"value": "34"
 						},
 						{
 							"key": "Connection",
@@ -279,10 +287,18 @@
 						{
 							"key": "Cache-Control",
 							"value": "no-store, max-age=0, no-cache"
+						},
+						{
+							"key": "Debugbar-Time",
+							"value": "1680259128.830330"
+						},
+						{
+							"key": "Debugbar-Link",
+							"value": "http://theredarmy.ru/?debugbar_time=1680259128.830330"
 						}
 					],
 					"cookie": [],
-					"body": "[\"Invalid amount.\"]"
+					"body": "{\n    \"error\": \"Invalid amount.\"\n}"
 				},
 				{
 					"name": "InvalidAmountError2",
@@ -304,9 +320,9 @@
 							]
 						}
 					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "html",
+					"status": "Unprocessable Content",
+					"code": 422,
+					"_postman_previewlanguage": "json",
 					"header": [
 						{
 							"key": "Server",
@@ -314,15 +330,15 @@
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 30 Mar 2023 12:20:59 GMT"
+							"value": "Fri, 31 Mar 2023 10:38:48 GMT"
 						},
 						{
 							"key": "Content-Type",
-							"value": "text/html; charset=UTF-8"
+							"value": "application/json; charset=UTF-8"
 						},
 						{
 							"key": "Content-Length",
-							"value": "19"
+							"value": "34"
 						},
 						{
 							"key": "Connection",
@@ -339,10 +355,18 @@
 						{
 							"key": "Cache-Control",
 							"value": "no-store, max-age=0, no-cache"
+						},
+						{
+							"key": "Debugbar-Time",
+							"value": "1680259128.830330"
+						},
+						{
+							"key": "Debugbar-Link",
+							"value": "http://theredarmy.ru/?debugbar_time=1680259128.830330"
 						}
 					],
 					"cookie": [],
-					"body": "[\"Invalid amount.\"]"
+					"body": "{\n    \"error\": \"Invalid amount.\"\n}"
 				}
 			]
 		},
@@ -447,9 +471,9 @@
 							]
 						}
 					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "html",
+					"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+					"code": 422,
+					"_postman_previewlanguage": "json",
 					"header": [
 						{
 							"key": "Server",
@@ -461,7 +485,10 @@
 						},
 						{
 							"key": "Content-Type",
-							"value": "text/html; charset=UTF-8"
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
 						},
 						{
 							"key": "Content-Length",
@@ -485,7 +512,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "[\"Insufficient funds.\"]"
+					"body": "{\n    \"error\": \"Insufficient funds.\"\n}"
 				},
 				{
 					"name": "InvalidAmountError",
@@ -507,9 +534,9 @@
 							]
 						}
 					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "html",
+					"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+					"code": 422,
+					"_postman_previewlanguage": "json",
 					"header": [
 						{
 							"key": "Server",
@@ -517,15 +544,18 @@
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 30 Mar 2023 12:22:52 GMT"
+							"value": "Fri, 31 Mar 2023 10:38:48 GMT"
 						},
 						{
 							"key": "Content-Type",
-							"value": "text/html; charset=UTF-8"
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
 						},
 						{
 							"key": "Content-Length",
-							"value": "19"
+							"value": "34"
 						},
 						{
 							"key": "Connection",
@@ -542,10 +572,18 @@
 						{
 							"key": "Cache-Control",
 							"value": "no-store, max-age=0, no-cache"
+						},
+						{
+							"key": "Debugbar-Time",
+							"value": "1680259128.830330"
+						},
+						{
+							"key": "Debugbar-Link",
+							"value": "http://theredarmy.ru/?debugbar_time=1680259128.830330"
 						}
 					],
 					"cookie": [],
-					"body": "[\"Invalid amount.\"]"
+					"body": "{\n    \"error\": \"Invalid amount.\"\n}"
 				}
 			]
 		},
@@ -714,9 +752,9 @@
 							]
 						}
 					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "html",
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
 					"header": [
 						{
 							"key": "Server",
@@ -728,7 +766,10 @@
 						},
 						{
 							"key": "Content-Type",
-							"value": "text/html; charset=UTF-8"
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
 						},
 						{
 							"key": "Content-Length",
@@ -752,7 +793,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "[\"Sender user does not exist.\"]"
+					"body": "{\n    \"error\": \"Sender user does not exist.\"\n}"
 				},
 				{
 					"name": "RecipientUserDoesNotExistError",
@@ -775,9 +816,9 @@
 							]
 						}
 					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "html",
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
 					"header": [
 						{
 							"key": "Server",
@@ -789,7 +830,10 @@
 						},
 						{
 							"key": "Content-Type",
-							"value": "text/html; charset=UTF-8"
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
 						},
 						{
 							"key": "Content-Length",
@@ -813,7 +857,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "[\"Recipient user does not exist.\"]"
+					"body": "{\n    \"error\": \"Recipient user does not exist.\"\n}"
 				},
 				{
 					"name": "InsufficientFundsError",
@@ -836,9 +880,9 @@
 							]
 						}
 					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "html",
+					"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+					"code": 422,
+					"_postman_previewlanguage": "json",
 					"header": [
 						{
 							"key": "Server",
@@ -850,7 +894,10 @@
 						},
 						{
 							"key": "Content-Type",
-							"value": "text/html; charset=UTF-8"
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
 						},
 						{
 							"key": "Content-Length",
@@ -874,7 +921,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "[\"Insufficient funds.\"]"
+					"body": "{\n    \"error\": \"Insufficient funds.\"\n}"
 				},
 				{
 					"name": "InvalidAmountError",
@@ -897,8 +944,8 @@
 							]
 						}
 					},
-					"status": "OK",
-					"code": 200,
+					"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+					"code": 422,
 					"_postman_previewlanguage": "html",
 					"header": [
 						{
@@ -935,7 +982,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "[\"Invalid amount.\"]"
+					"body": "{\r\n    \"error\": \"Invalid amount.\"\r\n}"
 				}
 			]
 		}

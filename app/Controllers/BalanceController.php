@@ -5,11 +5,13 @@ namespace App\Controllers;
 use App\Entities\User;
 use App\Models\UsersModel;
 use CodeIgniter\API\ResponseTrait;
-use http\Exception\InvalidArgumentException;
+use InvalidArgumentException;
 
 class BalanceController extends BaseController
 {
     use ResponseTrait;
+
+    private UsersModel $usersModel;
 
     public function __construct()
     {
@@ -19,7 +21,7 @@ class BalanceController extends BaseController
     public function validateAmount(float $amount): bool
     {
         if ($amount <= 0) {
-            throw new InvalidArgumentException('Invalid amount.');
+            return false;
         }
         return true;
     }
@@ -27,7 +29,7 @@ class BalanceController extends BaseController
     public function validateUser($user): bool
     {
         if ($user === null) {
-            throw new InvalidArgumentException('User does not exist.');
+            return false;
         }
         return true;
     }
@@ -36,10 +38,8 @@ class BalanceController extends BaseController
     {
         $user = $this->usersModel->find($userId);
 
-        try {
-            $this->validateUser($user);
-        } catch (InvalidArgumentException $e) {
-            echo $e->getMessage();
+        if (!$this->validateUser($user)) {
+            return $this->respond(['error' => 'User does not exist.'], 404);
         }
 
         return $this->respond($user);
@@ -47,10 +47,8 @@ class BalanceController extends BaseController
 
     public function increaseBalance(int $userId = 0, float $amount = 0)
     {
-        try {
-            $this->validateAmount($amount);
-        } catch (InvalidArgumentException $e) {
-            echo $e->getMessage();
+        if (!$this->validateAmount($amount)) {
+            return $this->respond(['error' => 'Invalid amount.'], 422);
         }
 
         $user = $this->usersModel->find($userId);
@@ -73,15 +71,14 @@ class BalanceController extends BaseController
     {
         $user = $this->usersModel->find($userId);
 
-        try {
-            $this->validateUser($user);
-            $this->validateAmount($amount);
-        } catch (InvalidArgumentException $e) {
-            echo $e->getMessage();
+        if (!$this->validateAmount($amount)) {
+            return $this->respond(['error' => 'Invalid amount.'], 422);
+        } elseif(!$this->validateUser($user)) {
+            return $this->respond(['error' => 'User does not exist.'], 404);
         }
 
         if ($amount > $user->getBalance()) {
-            return $this->failValidationErrors('Insufficient funds.');
+            return $this->respond(['error' => 'Insufficient funds.'], 422);
         }
 
         $updatedBalance = $user->getBalance() - $amount;
@@ -97,21 +94,19 @@ class BalanceController extends BaseController
         $recipient = $this->usersModel->find($recipientId);
 
         if ($sender === null) {
-            return $this->failNotFound('Sender user does not exist.');
+            return $this->respond(['error' => 'Sender user does not exist.'], 404);
         }
 
         if ($recipient === null) {
-            return $this->failNotFound('Recipient user does not exist.');
+            return $this->respond(['error' => 'Recipient user does not exist.'], 404);
         }
 
-        try {
-            $this->validateAmount($amount);
-        } catch (InvalidArgumentException $e) {
-            echo $e->getMessage();
+        if (!$this->validateAmount($amount)) {
+            return $this->respond(['error' => 'Invalid amount.'], 422);
         }
 
         if ($amount > $sender->getBalance()) {
-            return $this->failValidationErrors('Insufficient funds.');
+            return $this->respond(['error' => 'Insufficient funds.'], 422);
         }
 
         $senderUpdatedBalance = $sender->getBalance() - $amount;
@@ -123,6 +118,6 @@ class BalanceController extends BaseController
         $recipient->setBalance($recipientUpdatedBalance);
         $this->usersModel->save($recipient);
 
-        return $this->respond([$sender, $recipient]);
+        return $this->respond([$this->usersModel->find($senderId), $this->usersModel->find($recipientId)]);
     }
 }
